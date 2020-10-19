@@ -221,3 +221,7 @@ def tabela_solucao(request):
     data['problema'] = problema
 
     return render(request, 'app/tabela_solucao.html', data)
+
+def conclusao(request):
+	data = {}
+	return render(request, 'app/conclusao.html', data)
