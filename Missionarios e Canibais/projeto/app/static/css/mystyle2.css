@@ -1,0 +1,39 @@
+﻿/*--------------------- BASE HEADER---------------------*/
+
+.header-sec {
+	padding-left: 55px;
+	padding-right: 72px;
+	background: #08192d;
+}
+
+.logo-deep {
+	display: inline-block;
+	padding: 0;
+	padding: 44px 15px;
+}
+
+.header-right {
+	float: right;
+	padding: 44px 0;
+	margin-left: 130px;
+}
+
+.header-right .painel-user {
+	display: inline-block;
+}
+
+.header-right .painel-user a {
+	font-size: 16px;
+	color: #ffffff;
+	margin: 0 10px;
+}
+
+.header-right .painel-user .log-reg {
+	color: #fc0254;
+	margin-right: 0;
+}
+
+.main-menu {
+	list-style: none;
+	float: right;
+}

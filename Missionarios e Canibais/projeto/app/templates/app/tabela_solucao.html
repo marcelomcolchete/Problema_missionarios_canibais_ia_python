@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="zxx">
+<head>
+	<title>Missionarios e Canibais</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	{% load static %}
+
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/deepstyle.css' %}"/>
+
+
+	<div class="container-fluid" style="background-color: #08192d;">	
+		<div class="row">
+			<a class="col border-right border-left" href="/" style="color: #FFFFFF">Voltar</a>
+			<a class="col border-right border-left" href="/tabela_solucao" style="color: #FFFFFF">Testar Novamente</a>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<table class="table table-bordered table-sm">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col"></th>
+						<th scope="col">Estados criados (Thread1)</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for estado in problema.visitados_thread1 %}
+						<tr>
+							<th scope="row"></th>
+							<td>{{ estado }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col">
+			<table class="table table-bordered table-sm">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col"></th>
+						<th scope="col">Estados criados (Thread2)</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for estado in problema.visitados_thread2 %}
+						<tr>
+							<th scope="row"></th>
+							<td>{{ estado }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col">
+			<table class="table table-bordered table-sm">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col"></th>
+						<th scope="col">Caminho final (Thread1)</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for estado in problema.caminho_thread1 %}
+						<tr>
+							<th scope="row"></th>
+							<td>{{ estado }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col">
+			<table class="table table-bordered table-sm">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col"></th>
+						<th scope="col">Caminho final (Thread2)</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for estado in problema.caminho_thread2 %}
+						<tr>
+							<th scope="row"></th>
+							<td>{{ estado }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<!--====== Javascripts & Jquery ======-->
+	<script type="text/javascript" src="/static/assets/javascript/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/jquery.slicknav.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/mixitup.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/main.js"></script>
+	
+	</body>
+</html>

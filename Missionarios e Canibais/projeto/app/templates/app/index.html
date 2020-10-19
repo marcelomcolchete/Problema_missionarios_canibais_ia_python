@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="zxx">
+<head>
+	<title>Missionarios e Canibais</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	{% load static %}
+
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/deepstyle.css' %}"/>
+
+	<!-- Intro section -->
+	<div class="container">
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col">
+				<h2>Problema dos Missionários e Canibais</h2>
+			</div>
+		</div>
+	</div>
+	<section class="intro-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="section-title">
+						<h5>Definição:</h5>
+						<p>No problema dos canibais e missionários, três missionários e três canibais devem atravessar um rio com um barco que pode transportar no máximo duas pessoas, sob a restrição de que, para ambas as margens, se há missionários presentes naquela margem, eles não podem ser ultrapassados pelo número de canibais na mesma margem (se fossem, os canibais comeriam os missionários.) O barco não pode atravessar o rio por si só, sem pessoas a bordo.</p>
+						<h5>Solução:</h5>
+						<p>Para solucionar esse problema é viável o uso de algoritmos de busca para buscar o melhor caminho para sairmos do estado inicial e chegarmos ao estado final. O grafo ao lado é uma solução do problema.</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<img src="static/grafo.jpg">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Intro section end -->
+
+	<!-- How section -->
+	<section class="how-section spad set-bg">
+		<div class="container text-white">
+			<div class="section-title">
+				<h2>Busca Bidirecional</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="how-item">
+						<h4>Motivação</h4>
+						<p>Usar a busca bidirecional é algo bem intuitivo já que temos os estados finais e inicias do problema</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="how-item">
+						<h4>Funcionamento</h4>
+						<p>Como o nome já diz, nós buscamos a solução através de dois caminhos. Encontramos a solução quando esses caminhos se cruzam</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="how-item">
+						<h4>Implementação</h4>
+						<p>A implementação foi feita com o uso de duas threads para paralelizar os processos de buscas e com um algoritmo de busca em profundidade espelhado para cada um dos estados</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- How section end -->
+
+	<!-- Premium section end -->
+	<section class="premium-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="section-title">
+						<h2>Como modelar o problema?</h2>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<p>Essa é uma das partes mais dificeis de toda programação, saber modelar seu problema. No nosso caso escolhemos utilizar a programação orientada a objetos que é muito comum em python (linguagem que trabalhamos).</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="premium-item">
+						<h4>Classe: Problema</h4>
+						<p>Atributo: caminho[thread]</p>
+						<p>Atributo: visitados[thread]</p>
+						<p>Atributo: contador[thread]</p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="premium-item">
+						<h4>Classe: Thread</h4>
+						<p>Atributo: ID</p>
+						<p>Atributo: Nome</p>
+						<p>Atributo: Problema</p>
+						<p>Processo: problema.buscaCaminho</p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="premium-item">
+						<h4>Classe: Estado</h4>
+						<p>Atributo: Canibais</p>
+						<p>Atributo: Missionarios</p>
+						<p>Atributo: local_barco</p>
+						<p>Atributo: thread_criadora</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="how-section spad set-bg">
+		<div class="container text-white">
+			<div class="section-title">
+				<div class="row">
+					<div class="col-5"></div>
+					<div class="col"><a href="tabela_solucao" class="site-btn">Buscar Solução</a></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- How section end -->
+
+	
+	<!--====== Javascripts & Jquery ======-->
+	<script type="text/javascript" src="/static/assets/javascript/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/jquery.slicknav.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/mixitup.min.js"></script>
+	<script type="text/javascript" src="/static/assets/javascript/main.js"></script>
+	
+	</body>
+</html>
