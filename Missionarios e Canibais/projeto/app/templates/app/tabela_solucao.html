@@ -28,14 +28,28 @@
 			<table class="table table-bordered table-sm">
 				<thead class="thead-light">
 					<tr>
-						<th scope="col"></th>
+						<th scope="col">Histórico(Execuções)</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for execucao in problema.execucao %}
+						<tr>
+							<td>{{ execucao }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col">
+			<table class="table table-bordered table-sm">
+				<thead class="thead-light">
+					<tr>
 						<th scope="col">Estados criados (Thread1)</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for estado in problema.visitados_thread1 %}
 						<tr>
-							<th scope="row"></th>
 							<td>{{ estado }}</td>
 						</tr>
 					{% endfor %}
@@ -46,14 +60,12 @@
 			<table class="table table-bordered table-sm">
 				<thead class="thead-light">
 					<tr>
-						<th scope="col"></th>
 						<th scope="col">Estados criados (Thread2)</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for estado in problema.visitados_thread2 %}
 						<tr>
-							<th scope="row"></th>
 							<td>{{ estado }}</td>
 						</tr>
 					{% endfor %}
@@ -64,14 +76,12 @@
 			<table class="table table-bordered table-sm">
 				<thead class="thead-light">
 					<tr>
-						<th scope="col"></th>
 						<th scope="col">Caminho final (Thread1)</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for estado in problema.caminho_thread1 %}
 						<tr>
-							<th scope="row"></th>
 							<td>{{ estado }}</td>
 						</tr>
 					{% endfor %}
@@ -82,14 +92,12 @@
 			<table class="table table-bordered table-sm">
 				<thead class="thead-light">
 					<tr>
-						<th scope="col"></th>
 						<th scope="col">Caminho final (Thread2)</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for estado in problema.caminho_thread2 %}
 						<tr>
-							<th scope="row"></th>
 							<td>{{ estado }}</td>
 						</tr>
 					{% endfor %}

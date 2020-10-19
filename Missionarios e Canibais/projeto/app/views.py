@@ -33,7 +33,7 @@ class Estado:
         self.criador = criador # qual thread criou esse estado
         
     def __str__(self):
-        return (str(self.criador)+"("+str(self.canibais)+", "+str(self.missionarios)+", "+str(self.barco)+")")
+        return ("("+str(self.canibais)+", "+str(self.missionarios)+", "+str(self.barco)+")")
 
 class Problema:
     
@@ -44,7 +44,9 @@ class Problema:
         self.visitados_thread2 = list() # todos os estados que a thread2 criou até a solução
         self.thread1 = 0 # contador para a busca em profundidade da thread1
         self.thread2 = 0 # contador para a busca em profundidade da thread2
+        # Debugs #
         self.mostra_tentativas = True # Mude aqui para mostrar as tentativas ou não (True,False)
+        self.execucao = list()
         
     # checaEstado = checagem se o estado é inválido(0), válido(1) ou final(2) #
 
@@ -144,7 +146,9 @@ class Problema:
             for i in range(0,5): 
                 self.thread1 = self.thread1 + 1    
                 transicao = self.transforma(i)
-                if(self.mostra_tentativas): print(str(self.caminho_thread1[len(self.caminho_thread1)-1])+' ['+str(transicao)+']')
+                if(self.mostra_tentativas): 
+                	print(str(self.caminho_thread1[len(self.caminho_thread1)-1])+' ['+str(transicao)+']')
+                	self.execucao.append(('Thread 1: '+str(self.caminho_thread1[len(self.caminho_thread1)-1])+' '+str(transicao)))
                 if(self.checaTransicao(transicao,criador)):
                     nova_estado = self.atravessa(transicao[0],transicao[1],criador)
                     checkestado = self.checaEstado(nova_estado)
@@ -166,7 +170,9 @@ class Problema:
             for i in range(0,5):
                 self.thread2 = self.thread2 + 1    
                 transicao = self.transforma(i)
-                if(self.mostra_tentativas): print(str(self.caminho_thread2[len(self.caminho_thread2)-1])+' ['+str(transicao)+']')
+                if(self.mostra_tentativas): 
+                	print(str(self.caminho_thread2[len(self.caminho_thread2)-1])+' ['+str(transicao)+']')
+                	self.execucao.append(('Thread 2: '+str(self.caminho_thread2[len(self.caminho_thread2)-1])+' '+str(transicao)))
                 if(self.checaTransicao(transicao,criador)):
                     nova_estado = self.atravessa(transicao[0],transicao[1],criador)
                     checkestado = self.checaEstado(nova_estado)
